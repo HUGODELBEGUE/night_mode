@@ -1,0 +1,105 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+:root {
+    --color--background--day: #f3f3f3;
+    --color--background--night: #333;
+    --color--container--day: rgb(237, 208, 236);
+    --color--container--night: rgb(180, 112, 240);
+    --color--label--day: rgb(206, 206, 206);
+    --color--label--night: rgb(77, 77, 77);
+    --color--ball--day: rgb(95, 95, 95);
+    --color--ball--night: rgb(200, 200, 200);
+    --color--sun: #e3a11c;
+    --color--moon: #dfdabd;
+    --shadow--day: 2px 2px 2px #333;
+    --shadow--night: 2px 2px 2px #f3f3f3;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Nerko One', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    background: var(--color--background--day);
+}
+
+main {
+    width: 50%;
+    background-color: var(--color--container--day);
+    box-shadow: var(--shadow--day);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+img {
+    margin-top: 2rem;
+    height: auto;
+    width: 70%;
+    aspect-ratio: 16/9;
+}
+
+#img_night {
+    display: none;
+}
+
+.switch {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+
+    .checkbox {
+        display: none;
+    }
+}
+
+.label {
+    position: relative;
+    background: var(--color--label--day);
+    padding: .3rem .4rem;
+    border-radius: 25px;
+    box-shadow: var(--shadow--day);
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+
+.ball {
+    position: absolute;
+    left: 5px;
+    background: var(--color--ball--day);
+    height: 25px;
+    width: 25px;
+    border-radius: 25px;
+    margin-right: none;
+    transform: scale(1.3);
+    transform: translateX(0px);
+    transition: transform .15s cubic-bezier(.88, .64, .67, 1.49)
+}
+
+.checkbox:checked+.label .ball {
+    transform: translateX(34px);
+}
+
+.dark__mode {
+    background: var(--color--background--night);
+}
+
+.dark__mode .container {
+    background: var(--color--container--night);
+    box-shadow: var(--shadow--night);
+}
+
+.dark__mode .label {
+    background: var(--color--label--night);
+    box-shadow: var(--shadow--night);
+}
+
+.dark__mode .ball {
+    background: var(--color--ball--night);
+}
