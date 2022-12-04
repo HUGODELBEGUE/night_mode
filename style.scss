@@ -12,8 +12,8 @@
     --color--ball--night: rgb(200, 200, 200);
     --color--sun: #e3a11c;
     --color--moon: #dfdabd;
-    --shadow--day: 2px 2px 2px #333;
-    --shadow--night: 2px 2px 2px #f3f3f3;
+    --shadow--day: 1px 2px 3px #333;
+    --shadow--night: 1px 2px 3px #f3f3f3;
 }
 
 body {
@@ -40,6 +40,7 @@ img {
     height: auto;
     width: 70%;
     aspect-ratio: 16/9;
+    box-shadow: var(--shadow--day);
 }
 
 #img_night {
